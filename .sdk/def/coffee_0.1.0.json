@@ -1,0 +1,150 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Coffee",
+    "description": "Basic list of descriptions and ingredients for popular coffee drinks",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Sample APIs",
+      "url": "https://sampleapis.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.sampleapis.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/coffee/hot": {
+      "get": {
+        "summary": "Get all hot coffee drinks",
+        "description": "Returns a list of hot coffee drinks with their descriptions and ingredients",
+        "operationId": "getHotCoffee",
+        "tags": [
+          "Coffee"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CoffeeDrink"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/coffee/iced": {
+      "get": {
+        "summary": "Get all iced coffee drinks",
+        "description": "Returns a list of iced coffee drinks with their descriptions and ingredients",
+        "operationId": "getIcedCoffee",
+        "tags": [
+          "Coffee"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CoffeeDrink"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CoffeeDrink": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the coffee drink",
+            "example": 1
+          },
+          "title": {
+            "type": "string",
+            "description": "Name of the coffee drink",
+            "example": "Espresso"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the coffee drink",
+            "example": "A strong, concentrated coffee brewed by forcing hot water through finely-ground coffee beans"
+          },
+          "ingredients": {
+            "type": "array",
+            "description": "List of ingredients used in the coffee drink",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Coffee beans",
+              "Water"
+            ]
+          },
+          "image": {
+            "type": "string",
+            "description": "URL to an image of the coffee drink",
+            "example": "https://example.com/espresso.jpg"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Coffee",
+      "description": "Endpoints for retrieving coffee drink information"
+    }
+  ],
+  "externalDocs": {
+    "description": "API Documentation",
+    "url": "https://sampleapis.com/api-list/coffee"
+  }
+}

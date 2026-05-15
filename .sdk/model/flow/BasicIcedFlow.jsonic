@@ -1,0 +1,22 @@
+# BasicIcedFlow
+
+main: kit: flow: BasicIcedFlow:
+{
+  entity: "iced",
+  kind: "basic",
+  name: "BasicIcedFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iced_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIcedFlow"
+}

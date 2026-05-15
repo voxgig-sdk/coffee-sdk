@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Sample APIs"
+        url: "https://sampleapis.com"
+      }
+      description: "Basic list of descriptions and ingredients for popular coffee drinks"
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.sampleapis.com"
+        }
+      ]
+      title: "Coffee"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

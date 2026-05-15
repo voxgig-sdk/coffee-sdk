@@ -1,0 +1,63 @@
+# Entity: hot
+
+main: kit: entity: hot: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "description"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "image"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ingredient"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "title"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "hot"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/coffee/hot"
+          parts: [
+            "coffee"
+            "hot"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

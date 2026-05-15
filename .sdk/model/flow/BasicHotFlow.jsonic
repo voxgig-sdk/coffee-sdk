@@ -1,0 +1,22 @@
+# BasicHotFlow
+
+main: kit: flow: BasicHotFlow:
+{
+  entity: "hot",
+  kind: "basic",
+  name: "BasicHotFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "hot_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicHotFlow"
+}

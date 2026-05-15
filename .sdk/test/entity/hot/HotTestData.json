@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "hot": {
+      "HOT00": {
+        "description": "s32",
+        "id": "HOT00",
+        "image": "s34",
+        "ingredient": [],
+        "title": "s36"
+      },
+      "HOT01": {
+        "description": "s64",
+        "id": "HOT01",
+        "image": "s66",
+        "ingredient": [],
+        "title": "s68"
+      },
+      "HOT02": {
+        "description": "s96",
+        "id": "HOT02",
+        "image": "s98",
+        "ingredient": [],
+        "title": "s9a"
+      }
+    }
+  },
+  "new": {
+    "hot": {
+      "hot_ref01": {
+        "description": "sc8",
+        "image": "sca",
+        "ingredient": [],
+        "title": "scc"
+      }
+    }
+  }
+}
