@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/coffee-sdk"
-	"github.com/voxgig-sdk/coffee-sdk/core"
+	sdk "github.com/voxgig-sdk/coffee-sdk/go"
+	"github.com/voxgig-sdk/coffee-sdk/go/core"
 )
 
 func TestHotDirect(t *testing.T) {

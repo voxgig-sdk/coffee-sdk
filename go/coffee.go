@@ -1,10 +1,10 @@
 package voxgigcoffeesdk
 
 import (
-	"github.com/voxgig-sdk/coffee-sdk/core"
-	"github.com/voxgig-sdk/coffee-sdk/entity"
-	"github.com/voxgig-sdk/coffee-sdk/feature"
-	_ "github.com/voxgig-sdk/coffee-sdk/utility"
+	"github.com/voxgig-sdk/coffee-sdk/go/core"
+	"github.com/voxgig-sdk/coffee-sdk/go/entity"
+	"github.com/voxgig-sdk/coffee-sdk/go/feature"
+	_ "github.com/voxgig-sdk/coffee-sdk/go/utility"
 )
 
 // Type aliases preserve external API.
