@@ -86,7 +86,6 @@ function iced_basic_setup($extra)
         "COFFEE_TEST_ICED_ENTID" => $idmap,
         "COFFEE_TEST_LIVE" => "FALSE",
         "COFFEE_TEST_EXPLAIN" => "FALSE",
-        "COFFEE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +97,6 @@ function iced_basic_setup($extra)
     if ($env["COFFEE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["COFFEE_APIKEY"],
             ],
             $extra ?? [],
         ]);

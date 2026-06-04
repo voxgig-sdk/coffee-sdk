@@ -61,14 +61,12 @@ def _iced_direct_setup(mockres):
     env = runner.env_override({
         "COFFEE_TEST_ICED_ENTID": {},
         "COFFEE_TEST_LIVE": "FALSE",
-        "COFFEE_APIKEY": "NONE",
     })
 
     live = env.get("COFFEE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("COFFEE_APIKEY"),
         }
         client = CoffeeSDK(merged_opts)
         return {
