@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://api.sampleapis.com",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -27,64 +30,64 @@ def make_config():
       "hot": {
         "fields": [
           {
+            "active": True,
             "name": "description",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "id",
             "req": False,
             "type": "`$INTEGER`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "image",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "ingredient",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 3,
           },
           {
+            "active": True,
             "name": "title",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 4,
           },
         ],
         "name": "hot",
         "op": {
           "list": {
+            "input": "data",
             "name": "list",
             "points": [
               {
+                "active": True,
+                "args": {},
                 "method": "GET",
                 "orig": "/coffee/hot",
                 "parts": [
                   "coffee",
                   "hot",
                 ],
+                "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
-                "args": {},
-                "select": {},
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "list",
           },
         },
@@ -95,64 +98,64 @@ def make_config():
       "iced": {
         "fields": [
           {
+            "active": True,
             "name": "description",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "id",
             "req": False,
             "type": "`$INTEGER`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "image",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "ingredient",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 3,
           },
           {
+            "active": True,
             "name": "title",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 4,
           },
         ],
         "name": "iced",
         "op": {
           "list": {
+            "input": "data",
             "name": "list",
             "points": [
               {
+                "active": True,
+                "args": {},
                 "method": "GET",
                 "orig": "/coffee/iced",
                 "parts": [
                   "coffee",
                   "iced",
                 ],
+                "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
-                "args": {},
-                "select": {},
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "list",
           },
         },

@@ -92,6 +92,7 @@ function hot_basic_setup(extra)
     ["COFFEE_TEST_HOT_ENTID"] = idmap,
     ["COFFEE_TEST_LIVE"] = "FALSE",
     ["COFFEE_TEST_EXPLAIN"] = "FALSE",
+    ["COFFEE_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,6 +104,7 @@ function hot_basic_setup(extra)
   if env["COFFEE_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["COFFEE_APIKEY"],
       },
       extra or {},
     })

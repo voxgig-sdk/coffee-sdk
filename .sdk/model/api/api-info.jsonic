@@ -17,26 +17,7 @@ main: {
       ]
       title: "Coffee"
       version: "1.0.0"
-      tagline: "Browse popular hot and iced coffee drinks with their descriptions and ingredients"
-      homepage: "https://sampleapis.com/api-list/coffee"
-      docs_url: "https://sampleapis.com/api-list/coffee"
-      license_short: "Free public sample API; intended for learning, prototyping, and demos."
-      license_md: `- Hosted on [SampleAPIs](https://sampleapis.com/), a free playground for REST and GraphQL endpoints.
-- No authentication required; CORS is enabled.
-- Intended for testing and learning, not production workloads.`
-      about_md: `The Coffee API is one of the free sample datasets published by [SampleAPIs](https://sampleapis.com/), a community playground for practising REST calls. It returns a small, fixed catalogue of popular coffee drinks split into hot and iced categories.
-
-What you get from the API:
-
-- \`GET /coffee/hot\` — list of hot coffee drinks with descriptions and ingredients.
-- \`GET /coffee/iced\` — list of iced coffee drinks with descriptions and ingredients.
-
-Operational notes: no API key is needed and CORS is enabled, so the endpoints can be called directly from the browser. The dataset is static and suitable for tutorials, UI mocks, and demos rather than real coffee-shop data.`
-      entity_desc: {
-        hot: "Hot coffee drinks with names, descriptions, and ingredient lists, served from `GET /coffee/hot`."
-        iced: "Iced coffee drinks with names, descriptions, and ingredient lists, served from `GET /coffee/iced`."
-      }
-      auth: false
     }
   }
 }
+

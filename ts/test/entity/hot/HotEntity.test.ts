@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'COFFEE_TEST_HOT_ENTID': idmap,
     'COFFEE_TEST_LIVE': 'FALSE',
     'COFFEE_TEST_EXPLAIN': 'FALSE',
+    'COFFEE_APIKEY': 'NONE',
   })
 
   idmap = env['COFFEE_TEST_HOT_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new CoffeeSDK(merge([
       {
+        apikey: env.COFFEE_APIKEY,
       },
       extra
     ]))

@@ -1,19 +1,8 @@
 # Coffee SDK
 
-Browse popular hot and iced coffee drinks with their descriptions and ingredients
+Coffee client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Coffee
-
-The Coffee API is one of the free sample datasets published by [SampleAPIs](https://sampleapis.com/), a community playground for practising REST calls. It returns a small, fixed catalogue of popular coffee drinks split into hot and iced categories.
-
-What you get from the API:
-
-- `GET /coffee/hot` — list of hot coffee drinks with descriptions and ingredients.
-- `GET /coffee/iced` — list of iced coffee drinks with descriptions and ingredients.
-
-Operational notes: no API key is needed and CORS is enabled, so the endpoints can be called directly from the browser. The dataset is static and suitable for tutorials, UI mocks, and demos rather than real coffee-shop data.
 
 ## Try it
 
@@ -47,29 +36,31 @@ gem install coffee-sdk
 luarocks install coffee-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { CoffeeSDK } from 'coffee'
 
-const client = new CoffeeSDK({})
+const client = new CoffeeSDK({
+  apikey: process.env.COFFEE_APIKEY,
+})
 
 // List all hots
 const hots = await client.Hot().list()
+console.log(hots.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -99,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Hot** | Hot coffee drinks with names, descriptions, and ingredient lists, served from `GET /coffee/hot`. | `/coffee/hot` |
-| **Iced** | Iced coffee drinks with names, descriptions, and ingredient lists, served from `GET /coffee/iced`. | `/coffee/iced` |
+| **Hot** |  | `/coffee/hot` |
+| **Iced** |  | `/coffee/iced` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,12 +101,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from coffee_sdk import CoffeeSDK
 
-client = CoffeeSDK({})
+client = CoffeeSDK({
+    "apikey": os.environ.get("COFFEE_APIKEY"),
+})
 
 # List all hots
-hots, err = client.Hot(None).list(None, None)
+hots, err = client.Hot().list()
+print(hots)
 ```
 
 ### PHP
@@ -124,10 +119,13 @@ hots, err = client.Hot(None).list(None, None)
 <?php
 require_once 'coffee_sdk.php';
 
-$client = new CoffeeSDK([]);
+$client = new CoffeeSDK([
+    "apikey" => getenv("COFFEE_APIKEY"),
+]);
 
 // List all hots
-[$hots, $err] = $client->Hot(null)->list(null, null);
+[$hots, $err] = $client->Hot()->list();
+print_r($hots);
 ```
 
 ### Golang
@@ -135,10 +133,13 @@ $client = new CoffeeSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/coffee-sdk/go"
 
-client := sdk.NewCoffeeSDK(map[string]any{})
+client := sdk.NewCoffeeSDK(map[string]any{
+    "apikey": os.Getenv("COFFEE_APIKEY"),
+})
 
 // List all hots
 hots, err := client.Hot(nil).List(nil, nil)
+fmt.Println(hots)
 ```
 
 ### Ruby
@@ -146,10 +147,13 @@ hots, err := client.Hot(nil).List(nil, nil)
 ```ruby
 require_relative "Coffee_sdk"
 
-client = CoffeeSDK.new({})
+client = CoffeeSDK.new({
+  "apikey" => ENV["COFFEE_APIKEY"],
+})
 
 # List all hots
-hots, err = client.Hot(nil).list(nil, nil)
+hots, err = client.Hot().list
+puts hots
 ```
 
 ### Lua
@@ -157,10 +161,13 @@ hots, err = client.Hot(nil).list(nil, nil)
 ```lua
 local sdk = require("coffee_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("COFFEE_APIKEY"),
+})
 
 -- List all hots
-local hots, err = client:Hot(nil):list(nil, nil)
+local hots, err = client:Hot():list()
+print(hots)
 ```
 
 ## Unit testing in offline mode
@@ -179,25 +186,21 @@ const result = await client.Hot().load({ id: 'test01' })
 ### Python
 
 ```python
-client = CoffeeSDK.test(None, None)
-result, err = client.Hot(None).load(
-    {"id": "test01"}, None
-)
+client = CoffeeSDK.test()
+result, err = client.Hot().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = CoffeeSDK::test(null, null);
-[$result, $err] = $client->Hot(null)->load(
-    ["id" => "test01"], null
-);
+$client = CoffeeSDK::test();
+[$result, $err] = $client->Hot()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Hot(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -206,19 +209,15 @@ result, err := client.Hot(nil).Load(
 ### Ruby
 
 ```ruby
-client = CoffeeSDK.test(nil, nil)
-result, err = client.Hot(nil).load(
-  { "id" => "test01" }, nil
-)
+client = CoffeeSDK.test
+result, err = client.Hot().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Hot(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Hot():load({ id = "test01" })
 ```
 
 ## How it works
@@ -322,14 +321,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Coffee
-
-- Upstream: [https://sampleapis.com/api-list/coffee](https://sampleapis.com/api-list/coffee)
-
-- Hosted on [SampleAPIs](https://sampleapis.com/), a free playground for REST and GraphQL endpoints.
-- No authentication required; CORS is enabled.
-- Intended for testing and learning, not production workloads.
 
 ---
 

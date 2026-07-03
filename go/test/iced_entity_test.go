@@ -119,6 +119,7 @@ func icedBasicSetup(extra map[string]any) *entityTestSetup {
 		"COFFEE_TEST_ICED_ENTID": idmap,
 		"COFFEE_TEST_LIVE":      "FALSE",
 		"COFFEE_TEST_EXPLAIN":   "FALSE",
+		"COFFEE_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["COFFEE_TEST_ICED_ENTID"])
@@ -129,6 +130,7 @@ func icedBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["COFFEE_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["COFFEE_APIKEY"],
 			},
 			extra,
 		})
