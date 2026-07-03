@@ -10,7 +10,7 @@ The PHP SDK for the Coffee API — an entity-oriented client using PHP conventio
 
 ## Install
 ```bash
-composer require voxgig/coffee-sdk
+composer require voxgig-sdk/coffee
 ```
 
 

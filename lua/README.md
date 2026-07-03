@@ -10,7 +10,7 @@ The Lua SDK for the Coffee API — an entity-oriented client using Lua conventio
 
 ## Install
 ```bash
-luarocks install coffee-sdk
+luarocks install voxgig-sdk-coffee
 ```
 
 If the module is not yet published, add the source directory to
