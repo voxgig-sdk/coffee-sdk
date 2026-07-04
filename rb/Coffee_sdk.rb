@@ -208,26 +208,14 @@ class CoffeeSDK
   end
 
 
-  # Idiomatic facade: client.hot.list / client.hot.load({ "id" => ... })
-  def hot
-    require_relative 'entity/hot_entity'
-    @hot ||= HotEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.hot instead.
+  # Canonical facade: client.Hot.list / client.Hot.load({ "id" => ... })
   def Hot(data = nil)
     require_relative 'entity/hot_entity'
     HotEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.iced.list / client.iced.load({ "id" => ... })
-  def iced
-    require_relative 'entity/iced_entity'
-    @iced ||= IcedEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.iced instead.
+  # Canonical facade: client.Iced.list / client.Iced.load({ "id" => ... })
   def Iced(data = nil)
     require_relative 'entity/iced_entity'
     IcedEntity.new(self, data)

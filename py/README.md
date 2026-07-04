@@ -31,14 +31,16 @@ from coffee_sdk import CoffeeSDK
 client = CoffeeSDK()
 ```
 
-### 2. List hots
+### 2. List hot records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.hot.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    hots = client.Hot().list({})
+    for hot in hots:
+        print(hot)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CoffeeSDK.test()
 
-result = client.hot.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+hot = client.Hot().load({"id": "test01"})
+# hot contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -164,7 +167,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
 | `Hot` | `(data) -> HotEntity` | Create a Hot entity instance. |
-| `Iced` | `(data) -> IcedEntity` | Create a Iced entity instance. |
+| `Iced` | `(data) -> IcedEntity` | Create an Iced entity instance. |
 
 ### Entity interface
 
@@ -239,7 +242,7 @@ API path: `/coffee/iced`
 
 ### Hot
 
-Create an instance: `const hot = client.hot`
+Create an instance: `hot = client.Hot()`
 
 #### Operations
 
@@ -259,14 +262,14 @@ Create an instance: `const hot = client.hot`
 
 #### Example: List
 
-```ts
-const hots = await client.hot.list()
+```python
+hots = client.Hot().list({})
 ```
 
 
 ### Iced
 
-Create an instance: `const iced = client.iced`
+Create an instance: `iced = client.Iced()`
 
 #### Operations
 
@@ -286,8 +289,8 @@ Create an instance: `const iced = client.iced`
 
 #### Example: List
 
-```ts
-const iceds = await client.iced.list()
+```python
+iceds = client.Iced().list({})
 ```
 
 
@@ -361,7 +364,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-hot = client.hot
+hot = client.Hot()
 hot.load({"id": "example_id"})
 
 # hot.data_get() now returns the loaded hot data

@@ -28,16 +28,14 @@ require_relative "Coffee_sdk"
 client = CoffeeSDK.new
 ```
 
-### 2. List hots
+### 2. List hot records
 
 ```ruby
 begin
-  result = client.hot.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Hot records — iterate directly.
+  hots = client.Hot.list
+  hots.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = CoffeeSDK.test
+client = CoffeeSDK.test({
+  "entity" => { "hot" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.hot.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+hot = client.Hot.load({ "id" => "test01" })
+puts hot
 ```
 
 ### Use a custom fetch function
@@ -168,7 +170,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
 | `Hot` | `(data) -> HotEntity` | Create a Hot entity instance. |
-| `Iced` | `(data) -> IcedEntity` | Create a Iced entity instance. |
+| `Iced` | `(data) -> IcedEntity` | Create an Iced entity instance. |
 
 ### Entity interface
 
@@ -242,7 +244,7 @@ API path: `/coffee/iced`
 
 ### Hot
 
-Create an instance: `const hot = client.hot`
+Create an instance: `hot = client.Hot`
 
 #### Operations
 
@@ -262,14 +264,15 @@ Create an instance: `const hot = client.hot`
 
 #### Example: List
 
-```ts
-const hots = await client.hot.list()
+```ruby
+# list returns an Array of Hot records (raises on error).
+hots = client.Hot.list
 ```
 
 
 ### Iced
 
-Create an instance: `const iced = client.iced`
+Create an instance: `iced = client.Iced`
 
 #### Operations
 
@@ -289,8 +292,9 @@ Create an instance: `const iced = client.iced`
 
 #### Example: List
 
-```ts
-const iceds = await client.iced.list()
+```ruby
+# list returns an Array of Iced records (raises on error).
+iceds = client.Iced.list
 ```
 
 
@@ -365,7 +369,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-hot = client.hot
+hot = client.Hot
 hot.load({ "id" => "example_id" })
 
 # hot.data_get now returns the loaded hot data

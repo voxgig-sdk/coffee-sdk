@@ -89,7 +89,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## HotEntity
 
 ```php
-$hot = $client->hot();
+$hot = $client->Hot();
 ```
 
 ### Fields
@@ -109,7 +109,7 @@ $hot = $client->hot();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->hot()->list([]);
+$results = $client->Hot()->list([]);
 ```
 
 ### Common Methods
@@ -145,7 +145,7 @@ Return the entity name.
 ## IcedEntity
 
 ```php
-$iced = $client->iced();
+$iced = $client->Iced();
 ```
 
 ### Fields
@@ -165,7 +165,7 @@ $iced = $client->iced();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->iced()->list([]);
+$results = $client->Iced()->list([]);
 ```
 
 ### Common Methods

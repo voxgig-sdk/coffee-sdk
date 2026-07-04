@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:hot():list() / client:hot():load({ id = ... })
-function CoffeeSDK:hot(data)
+-- Idiomatic facade: client:Hot():list() / client:Hot():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CoffeeSDK:Hot(data)
   local EntityMod = require("entity.hot_entity")
   if data == nil then
     if self._hot == nil then
@@ -256,15 +257,10 @@ function CoffeeSDK:hot(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:hot() instead.
-function CoffeeSDK:Hot(data)
-  local EntityMod = require("entity.hot_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:iced():list() / client:iced():load({ id = ... })
-function CoffeeSDK:iced(data)
+-- Idiomatic facade: client:Iced():list() / client:Iced():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CoffeeSDK:Iced(data)
   local EntityMod = require("entity.iced_entity")
   if data == nil then
     if self._iced == nil then
@@ -272,12 +268,6 @@ function CoffeeSDK:iced(data)
     end
     return self._iced
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:iced() instead.
-function CoffeeSDK:Iced(data)
-  local EntityMod = require("entity.iced_entity")
   return EntityMod.new(self, data)
 end
 

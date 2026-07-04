@@ -4,45 +4,45 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Hot:
-    description: Optional[str] = None
-    id: Optional[int] = None
-    image: Optional[str] = None
-    ingredient: Optional[list] = None
-    title: Optional[str] = None
+class Hot(TypedDict, total=False):
+    description: str
+    id: int
+    image: str
+    ingredient: list
+    title: str
 
 
-@dataclass
-class HotListMatch:
-    description: Optional[str] = None
-    id: Optional[int] = None
-    image: Optional[str] = None
-    ingredient: Optional[list] = None
-    title: Optional[str] = None
+class HotListMatch(TypedDict, total=False):
+    description: str
+    id: int
+    image: str
+    ingredient: list
+    title: str
 
 
-@dataclass
-class Iced:
-    description: Optional[str] = None
-    id: Optional[int] = None
-    image: Optional[str] = None
-    ingredient: Optional[list] = None
-    title: Optional[str] = None
+class Iced(TypedDict, total=False):
+    description: str
+    id: int
+    image: str
+    ingredient: list
+    title: str
 
 
-@dataclass
-class IcedListMatch:
-    description: Optional[str] = None
-    id: Optional[int] = None
-    image: Optional[str] = None
-    ingredient: Optional[list] = None
-    title: Optional[str] = None
-
+class IcedListMatch(TypedDict, total=False):
+    description: str
+    id: int
+    image: str
+    ingredient: list
+    title: str

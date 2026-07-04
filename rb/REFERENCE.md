@@ -90,7 +90,7 @@ same parameters as `direct()`. Raises on error.
 ## HotEntity
 
 ```ruby
-hot = client.hot
+hot = client.Hot
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ hot = client.hot
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.hot.list(nil)
+results = client.Hot.list(nil)
 ```
 
 ### Common Methods
@@ -146,7 +146,7 @@ Return the entity name.
 ## IcedEntity
 
 ```ruby
-iced = client.iced
+iced = client.Iced
 ```
 
 ### Fields
@@ -166,7 +166,7 @@ iced = client.iced
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.iced.list(nil)
+results = client.Iced.list(nil)
 ```
 
 ### Common Methods

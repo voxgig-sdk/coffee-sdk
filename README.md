@@ -26,9 +26,11 @@ import { CoffeeSDK } from '@voxgig-sdk/coffee'
 
 const client = new CoffeeSDK()
 
-// List all hots
-const hots = await client.hot.list()
-console.log(hots.data)
+// List all hots (returns Hot[])
+const hots = await client.Hot().list()
+for (const hot of hots) {
+  console.log(hot)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,9 +86,10 @@ from coffee_sdk import CoffeeSDK
 
 client = CoffeeSDK()
 
-# List all hots
-hots = client.hot.list()
-print(hots)
+# List all hots (returns a list, raises on error)
+hots = client.Hot().list({})
+for hot in hots:
+    print(hot)
 ```
 
 ### PHP
@@ -97,8 +100,8 @@ require_once 'coffee_sdk.php';
 
 $client = new CoffeeSDK();
 
-// List all hots (throws on error)
-$hots = $client->hot()->list();
+// List all hots (returns an array; throws on error)
+$hots = $client->Hot()->list();
 print_r($hots);
 ```
 
@@ -121,8 +124,8 @@ require_relative "Coffee_sdk"
 
 client = CoffeeSDK.new
 
-# List all hots
-hots = client.hot.list
+# List all hots (returns an Array; raises on error)
+hots = client.Hot.list
 puts hots
 ```
 
@@ -134,7 +137,7 @@ local sdk = require("coffee_sdk")
 local client = sdk.new()
 
 -- List all hots
-local hots, err = client:hot():list()
+local hots, err = client:Hot():list()
 print(hots)
 ```
 
@@ -147,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CoffeeSDK.test()
-const result = await client.hot.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const hot = await client.Hot().load({ id: 1 })
+// hot is a bare Hot populated with mock data
+console.log(hot)
 ```
 
 ### Python
 
 ```python
 client = CoffeeSDK.test()
-result = client.hot.load({"id": "test01"})
+hot = client.Hot().load({"id": "test01"})
+print(hot)
 ```
 
 ### PHP
 
 ```php
-$client = CoffeeSDK::test();
-$result = $client->hot()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = CoffeeSDK::test([
+    "entity" => ["hot" => ["test01" => ["id" => "test01"]]],
+]);
+$hot = $client->Hot()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -177,15 +185,18 @@ result, err := client.Hot(nil).Load(
 ### Ruby
 
 ```ruby
-client = CoffeeSDK.test
-result = client.hot.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = CoffeeSDK.test({
+  "entity" => { "hot" => { "test01" => { "id" => "test01" } } },
+})
+hot = client.Hot.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:hot():load({ id = "test01" })
+local result, err = client:Hot():load({ id = "test01" })
 ```
 
 ## How it works
@@ -233,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

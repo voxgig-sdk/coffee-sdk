@@ -205,28 +205,14 @@ class CoffeeSDK {
 
 
 
-  _hot?: HotEntity
-
-  // Idiomatic facade: `client.hot.list()` / `client.hot.load({ id })`.
-  get hot(): HotEntity {
-    return (this._hot ??= new HotEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.hot` instead. */
+  // Entity access: `client.Hot().list()` / `client.Hot().load({ id })`.
   Hot(data?: any) {
     const self = this
     return new HotEntity(self,data)
   }
 
 
-  _iced?: IcedEntity
-
-  // Idiomatic facade: `client.iced.list()` / `client.iced.load({ id })`.
-  get iced(): IcedEntity {
-    return (this._iced ??= new IcedEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.iced` instead. */
+  // Entity access: `client.Iced().list()` / `client.Iced().load({ id })`.
   Iced(data?: any) {
     const self = this
     return new IcedEntity(self,data)

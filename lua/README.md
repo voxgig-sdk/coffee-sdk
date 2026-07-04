@@ -31,17 +31,17 @@ local sdk = require("coffee_sdk")
 local client = sdk.new()
 ```
 
-### 2. List hots
+### 2. List hot records
+
+Entity operations return `(value, err)`. For `list`, `value` is the
+array of records itself — iterate it directly (there is no wrapper).
 
 ```lua
-local result, err = client:hot():list()
+local hots, err = client:Hot():list()
 if err then error(err) end
 
-if type(result) == "table" then
-  for _, item in ipairs(result) do
-    local d = item:data_get()
-    print(d["id"], d["name"])
-  end
+for _, item in ipairs(hots) do
+  print(item["id"], item["name"])
 end
 ```
 
@@ -88,8 +88,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:hot():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:Hot():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -168,7 +168,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `prepare` | `(fetchargs) -> table, err` | Build an HTTP request definition without sending. |
 | `direct` | `(fetchargs) -> table, err` | Build and send an HTTP request. |
 | `Hot` | `(data) -> HotEntity` | Create a Hot entity instance. |
-| `Iced` | `(data) -> IcedEntity` | Create a Iced entity instance. |
+| `Iced` | `(data) -> IcedEntity` | Create an Iced entity instance. |
 
 ### Entity interface
 
@@ -190,17 +190,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local hot, err = client:Hot():load({ id = "example_id" })
+    if err then error(err) end
+    -- hot is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -239,7 +244,7 @@ API path: `/coffee/iced`
 
 ### Hot
 
-Create an instance: `const hot = client.hot`
+Create an instance: `local hot = client:Hot(nil)`
 
 #### Operations
 
@@ -259,14 +264,14 @@ Create an instance: `const hot = client.hot`
 
 #### Example: List
 
-```ts
-const hots = await client.hot.list()
+```lua
+local hots, err = client:Hot():list()
 ```
 
 
 ### Iced
 
-Create an instance: `const iced = client.iced`
+Create an instance: `local iced = client:Iced(nil)`
 
 #### Operations
 
@@ -286,8 +291,8 @@ Create an instance: `const iced = client.iced`
 
 #### Example: List
 
-```ts
-const iceds = await client.iced.list()
+```lua
+local iceds, err = client:Iced():list()
 ```
 
 
@@ -362,7 +367,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local hot = client:hot()
+local hot = client:Hot()
 hot:load({ id = "example_id" })
 
 -- hot:data_get() now returns the loaded hot data

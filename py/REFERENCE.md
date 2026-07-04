@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## HotEntity
 
 ```python
-hot = client.hot
+hot = client.Hot()
 ```
 
 ### Fields
@@ -104,7 +104,9 @@ hot = client.hot
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.hot.list({})
+results = client.Hot().list({})
+for hot in results:
+    print(hot)
 ```
 
 ### Common Methods
@@ -139,7 +141,7 @@ Return the entity name.
 ## IcedEntity
 
 ```python
-iced = client.iced
+iced = client.Iced()
 ```
 
 ### Fields
@@ -159,7 +161,9 @@ iced = client.iced
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.iced.list({})
+results = client.Iced().list({})
+for iced in results:
+    print(iced)
 ```
 
 ### Common Methods

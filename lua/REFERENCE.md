@@ -87,7 +87,7 @@ same parameters as `direct()`.
 ## HotEntity
 
 ```lua
-local hot = client:hot(nil)
+local hot = client:Hot(nil)
 ```
 
 ### Fields
@@ -107,7 +107,7 @@ local hot = client:hot(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:hot():list()
+local results, err = client:Hot():list()
 ```
 
 ### Common Methods
@@ -143,7 +143,7 @@ Return the entity name.
 ## IcedEntity
 
 ```lua
-local iced = client:iced(nil)
+local iced = client:Iced(nil)
 ```
 
 ### Fields
@@ -163,7 +163,7 @@ local iced = client:iced(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:iced():list()
+local results, err = client:Iced():list()
 ```
 
 ### Common Methods

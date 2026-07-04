@@ -220,41 +220,21 @@ class CoffeeSDK:
         }
 
 
-    @property
-    def hot(self):
-        """Idiomatic facade: client.hot.list() / client.hot.load({"id": ...})."""
-        from entity.hot_entity import HotEntity
-        cached = getattr(self, "_hot", None)
-        if cached is None:
-            cached = HotEntity(self, None)
-            self._hot = cached
-        return cached
-
-    def Hot(self, data=None):
-        # Deprecated: use client.hot instead.
+    def Hot(self, data=None) -> "HotEntity":
+        """Entity factory: client.Hot().list({}) / client.Hot().load({"id": ...})."""
         from entity.hot_entity import HotEntity
         return HotEntity(self, data)
 
 
-    @property
-    def iced(self):
-        """Idiomatic facade: client.iced.list() / client.iced.load({"id": ...})."""
-        from entity.iced_entity import IcedEntity
-        cached = getattr(self, "_iced", None)
-        if cached is None:
-            cached = IcedEntity(self, None)
-            self._iced = cached
-        return cached
-
-    def Iced(self, data=None):
-        # Deprecated: use client.iced instead.
+    def Iced(self, data=None) -> "IcedEntity":
+        """Entity factory: client.Iced().list({}) / client.Iced().load({"id": ...})."""
         from entity.iced_entity import IcedEntity
         return IcedEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "CoffeeSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class CoffeeSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.hot_entity import HotEntity
+    from entity.iced_entity import IcedEntity

@@ -121,7 +121,7 @@ Alias for `CoffeeSDK.test()`.
 ## HotEntity
 
 ```ts
-const hot = client.hot
+const hot = client.Hot()
 ```
 
 ### Fields
@@ -141,7 +141,7 @@ const hot = client.hot
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.hot.list()
+const results = await client.Hot().list()
 ```
 
 ### Common Methods
@@ -175,7 +175,7 @@ Return a copy of the entity options.
 ## IcedEntity
 
 ```ts
-const iced = client.iced
+const iced = client.Iced()
 ```
 
 ### Fields
@@ -195,7 +195,7 @@ const iced = client.iced
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.iced.list()
+const results = await client.Iced().list()
 ```
 
 ### Common Methods

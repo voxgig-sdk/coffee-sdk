@@ -233,10 +233,10 @@ class CoffeeSDK
 
     private $_hot = null;
 
-    // Idiomatic facade: $client->hot()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Hot() (PHP method
-    // names are case-insensitive).
-    public function hot($data = null)
+    // Canonical facade: $client->Hot()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->hot()
+    // resolves here too.
+    public function Hot($data = null)
     {
         require_once __DIR__ . '/entity/hot_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class CoffeeSDK
 
     private $_iced = null;
 
-    // Idiomatic facade: $client->iced()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Iced() (PHP method
-    // names are case-insensitive).
-    public function iced($data = null)
+    // Canonical facade: $client->Iced()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->iced()
+    // resolves here too.
+    public function Iced($data = null)
     {
         require_once __DIR__ . '/entity/iced_entity.php';
         if ($data === null) {
