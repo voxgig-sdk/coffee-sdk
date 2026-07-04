@@ -50,8 +50,7 @@ class IcedEntityTest extends TestCase
         $iced_ref01_ent = $client->Iced(null);
         $iced_ref01_match = [];
 
-        [$iced_ref01_list_result, $err] = $iced_ref01_ent->list($iced_ref01_match, null);
-        $this->assertNull($err);
+        $iced_ref01_list_result = $iced_ref01_ent->list($iced_ref01_match, null);
         $this->assertIsArray($iced_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function iced_basic_setup($extra)
         "COFFEE_TEST_ICED_ENTID" => $idmap,
         "COFFEE_TEST_LIVE" => "FALSE",
         "COFFEE_TEST_EXPLAIN" => "FALSE",
-        "COFFEE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function iced_basic_setup($extra)
     if ($env["COFFEE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["COFFEE_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -43,8 +43,7 @@ class HotEntityTest < Minitest::Test
     hot_ref01_ent = client.Hot(nil)
     hot_ref01_match = {}
 
-    hot_ref01_list_result, err = hot_ref01_ent.list(hot_ref01_match, nil)
-    assert_nil err
+    hot_ref01_list_result = hot_ref01_ent.list(hot_ref01_match, nil)
     assert hot_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def hot_basic_setup(extra)
     "COFFEE_TEST_HOT_ENTID" => idmap,
     "COFFEE_TEST_LIVE" => "FALSE",
     "COFFEE_TEST_EXPLAIN" => "FALSE",
-    "COFFEE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def hot_basic_setup(extra)
   if env["COFFEE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["COFFEE_APIKEY"],
       },
       extra || {},
     ])

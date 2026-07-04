@@ -245,11 +245,17 @@ func (sdk *CoffeeSDK) Direct(fetchargs map[string]any) (map[string]any, error) {
 }
 
 
+// Hot returns a Hot entity bound to this client.
+// Idiomatic usage: client.Hot(nil).List(nil, nil) or
+// client.Hot(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CoffeeSDK) Hot(data map[string]any) CoffeeEntity {
 	return NewHotEntityFunc(sdk, data)
 }
 
 
+// Iced returns a Iced entity bound to this client.
+// Idiomatic usage: client.Iced(nil).List(nil, nil) or
+// client.Iced(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CoffeeSDK) Iced(data map[string]any) CoffeeEntity {
 	return NewIcedEntityFunc(sdk, data)
 }

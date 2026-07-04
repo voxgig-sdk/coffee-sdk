@@ -43,8 +43,7 @@ class IcedEntityTest < Minitest::Test
     iced_ref01_ent = client.Iced(nil)
     iced_ref01_match = {}
 
-    iced_ref01_list_result, err = iced_ref01_ent.list(iced_ref01_match, nil)
-    assert_nil err
+    iced_ref01_list_result = iced_ref01_ent.list(iced_ref01_match, nil)
     assert iced_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def iced_basic_setup(extra)
     "COFFEE_TEST_ICED_ENTID" => idmap,
     "COFFEE_TEST_LIVE" => "FALSE",
     "COFFEE_TEST_EXPLAIN" => "FALSE",
-    "COFFEE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def iced_basic_setup(extra)
   if env["COFFEE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["COFFEE_APIKEY"],
       },
       extra || {},
     ])

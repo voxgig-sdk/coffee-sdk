@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch HotListMatch
+---@param ctrl? table
+---@return Hot[]
+---@return string? err
 function HotEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

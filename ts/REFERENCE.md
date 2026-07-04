@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -122,7 +121,7 @@ Alias for `CoffeeSDK.test()`.
 ## HotEntity
 
 ```ts
-const hot = client.Hot()
+const hot = client.hot
 ```
 
 ### Fields
@@ -142,7 +141,7 @@ const hot = client.Hot()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Hot().list()
+const results = await client.hot.list()
 ```
 
 ### Common Methods
@@ -176,7 +175,7 @@ Return a copy of the entity options.
 ## IcedEntity
 
 ```ts
-const iced = client.Iced()
+const iced = client.iced
 ```
 
 ### Fields
@@ -196,7 +195,7 @@ const iced = client.Iced()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Iced().list()
+const results = await client.iced.list()
 ```
 
 ### Common Methods

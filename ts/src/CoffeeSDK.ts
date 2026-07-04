@@ -3,6 +3,8 @@
 import { HotEntity } from './entity/HotEntity'
 import { IcedEntity } from './entity/IcedEntity'
 
+export type * from './CoffeeTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class CoffeeSDK {
 
 
 
+  _hot?: HotEntity
+
+  // Idiomatic facade: `client.hot.list()` / `client.hot.load({ id })`.
+  get hot(): HotEntity {
+    return (this._hot ??= new HotEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.hot` instead. */
   Hot(data?: any) {
     const self = this
     return new HotEntity(self,data)
   }
 
 
+  _iced?: IcedEntity
+
+  // Idiomatic facade: `client.iced.list()` / `client.iced.load({ id })`.
+  get iced(): IcedEntity {
+    return (this._iced ??= new IcedEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.iced` instead. */
   Iced(data?: any) {
     const self = this
     return new IcedEntity(self,data)

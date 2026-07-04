@@ -50,8 +50,7 @@ class TestIcedEntity:
         iced_ref01_ent = client.Iced(None)
         iced_ref01_match = {}
 
-        iced_ref01_list_result, err = iced_ref01_ent.list(iced_ref01_match, None)
-        assert err is None
+        iced_ref01_list_result = iced_ref01_ent.list(iced_ref01_match, None)
         assert isinstance(iced_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _iced_basic_setup(extra):
         "COFFEE_TEST_ICED_ENTID": idmap,
         "COFFEE_TEST_LIVE": "FALSE",
         "COFFEE_TEST_EXPLAIN": "FALSE",
-        "COFFEE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _iced_basic_setup(extra):
     if env.get("COFFEE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("COFFEE_APIKEY"),
             },
             extra or {},
         ])

@@ -45,6 +45,7 @@ class IcedEntity
     end
   end
 
+  # @return [Iced, Hash] the current Iced data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class IcedEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Iced fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class IcedEntity
   
 
   
+  # List Iced items matching the given filter.
+  #
+  # @param reqmatch [IcedListMatch, Hash, nil] match filter (any subset of Iced fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Iced>, Array] the matching Iced items; raises CoffeeError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

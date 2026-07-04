@@ -50,8 +50,7 @@ class HotEntityTest extends TestCase
         $hot_ref01_ent = $client->Hot(null);
         $hot_ref01_match = [];
 
-        [$hot_ref01_list_result, $err] = $hot_ref01_ent->list($hot_ref01_match, null);
-        $this->assertNull($err);
+        $hot_ref01_list_result = $hot_ref01_ent->list($hot_ref01_match, null);
         $this->assertIsArray($hot_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function hot_basic_setup($extra)
         "COFFEE_TEST_HOT_ENTID" => $idmap,
         "COFFEE_TEST_LIVE" => "FALSE",
         "COFFEE_TEST_EXPLAIN" => "FALSE",
-        "COFFEE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function hot_basic_setup($extra)
     if ($env["COFFEE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["COFFEE_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -88,7 +87,7 @@ same parameters as `direct()`.
 ## HotEntity
 
 ```lua
-local hot = client:Hot(nil)
+local hot = client:hot(nil)
 ```
 
 ### Fields
@@ -108,7 +107,7 @@ local hot = client:Hot(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Hot():list()
+local results, err = client:hot():list()
 ```
 
 ### Common Methods
@@ -144,7 +143,7 @@ Return the entity name.
 ## IcedEntity
 
 ```lua
-local iced = client:Iced(nil)
+local iced = client:iced(nil)
 ```
 
 ### Fields
@@ -164,7 +163,7 @@ local iced = client:Iced(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Iced():list()
+local results, err = client:iced():list()
 ```
 
 ### Common Methods

@@ -20,9 +20,6 @@ class CoffeeConfig
             ],
             "options" => [
                 "base" => "https://api.sampleapis.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

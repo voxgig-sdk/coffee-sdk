@@ -50,8 +50,7 @@ class TestHotEntity:
         hot_ref01_ent = client.Hot(None)
         hot_ref01_match = {}
 
-        hot_ref01_list_result, err = hot_ref01_ent.list(hot_ref01_match, None)
-        assert err is None
+        hot_ref01_list_result = hot_ref01_ent.list(hot_ref01_match, None)
         assert isinstance(hot_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _hot_basic_setup(extra):
         "COFFEE_TEST_HOT_ENTID": idmap,
         "COFFEE_TEST_LIVE": "FALSE",
         "COFFEE_TEST_EXPLAIN": "FALSE",
-        "COFFEE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _hot_basic_setup(extra):
     if env.get("COFFEE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("COFFEE_APIKEY"),
             },
             extra or {},
         ])

@@ -93,14 +93,12 @@ func hotDirectSetup(mockres any) *hotDirectSetupResult {
 	env := envOverride(map[string]any{
 		"COFFEE_TEST_HOT_ENTID": map[string]any{},
 		"COFFEE_TEST_LIVE":    "FALSE",
-		"COFFEE_APIKEY":       "NONE",
 	})
 
 	live := env["COFFEE_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["COFFEE_APIKEY"],
 		}
 		client := sdk.NewCoffeeSDK(mergedOpts)
 

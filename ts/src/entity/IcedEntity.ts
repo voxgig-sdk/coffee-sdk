@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Iced,
+  IcedListMatch,
+} from '../CoffeeTypes'
 
 // TODO: needs Entity superclass
-class IcedEntity extends CoffeeEntityBase {
+class IcedEntity extends CoffeeEntityBase<Iced> {
 
   constructor(client: CoffeeSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class IcedEntity extends CoffeeEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: IcedListMatch, ctrl?: Control): Promise<Iced[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class IcedEntity extends CoffeeEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Iced[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

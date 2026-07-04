@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch IcedListMatch
+---@param ctrl? table
+---@return Iced[]
+---@return string? err
 function IcedEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

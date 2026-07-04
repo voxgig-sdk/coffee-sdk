@@ -45,6 +45,7 @@ class HotEntity
     end
   end
 
+  # @return [Hot, Hash] the current Hot data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class HotEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Hot fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class HotEntity
   
 
   
+  # List Hot items matching the given filter.
+  #
+  # @param reqmatch [HotListMatch, Hash, nil] match filter (any subset of Hot fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Hot>, Array] the matching Hot items; raises CoffeeError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
