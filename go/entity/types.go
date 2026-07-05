@@ -17,8 +17,7 @@ type Hot struct {
 	Title *string `json:"title,omitempty"`
 }
 
-// HotListMatch mirrors the hot fields as an all-optional match
-// filter (Go analog of Partial<Hot>).
+// HotListMatch is the typed request payload for Hot.ListTyped.
 type HotListMatch struct {
 	Description *string `json:"description,omitempty"`
 	Id *int `json:"id,omitempty"`
@@ -36,8 +35,7 @@ type Iced struct {
 	Title *string `json:"title,omitempty"`
 }
 
-// IcedListMatch mirrors the iced fields as an all-optional match
-// filter (Go analog of Partial<Iced>).
+// IcedListMatch is the typed request payload for Iced.ListTyped.
 type IcedListMatch struct {
 	Description *string `json:"description,omitempty"`
 	Id *int `json:"id,omitempty"`

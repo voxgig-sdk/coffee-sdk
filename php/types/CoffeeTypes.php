@@ -22,7 +22,7 @@ class Hot
     public ?string $title = null;
 }
 
-/** Match filter for Hot#list (any subset of Hot fields). */
+/** Request payload for Hot#list. */
 class HotListMatch
 {
     public ?string $description = null;
@@ -42,7 +42,7 @@ class Iced
     public ?string $title = null;
 }
 
-/** Match filter for Iced#list (any subset of Iced fields). */
+/** Request payload for Iced#list. */
 class IcedListMatch
 {
     public ?string $description = null;

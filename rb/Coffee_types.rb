@@ -33,7 +33,7 @@ Hot = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Hot#list (any subset of Hot fields).
+# Request payload for Hot#list.
 #
 # @!attribute [rw] description
 #   @return [String, nil]
@@ -83,7 +83,7 @@ Iced = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Iced#list (any subset of Iced fields).
+# Request payload for Iced#list.
 #
 # @!attribute [rw] description
 #   @return [String, nil]

@@ -221,13 +221,13 @@ class CoffeeSDK:
 
 
     def Hot(self, data=None) -> "HotEntity":
-        """Entity factory: client.Hot().list({}) / client.Hot().load({"id": ...})."""
+        """Entity factory: client.Hot().list() / client.Hot().load({"id": ...})."""
         from entity.hot_entity import HotEntity
         return HotEntity(self, data)
 
 
     def Iced(self, data=None) -> "IcedEntity":
-        """Entity factory: client.Iced().list({}) / client.Iced().load({"id": ...})."""
+        """Entity factory: client.Iced().list() / client.Iced().load({"id": ...})."""
         from entity.iced_entity import IcedEntity
         return IcedEntity(self, data)
 

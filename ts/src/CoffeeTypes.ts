@@ -13,7 +13,13 @@ export interface Hot {
   title?: string
 }
 
-export type HotListMatch = Partial<Hot>
+export interface HotListMatch {
+  description?: string
+  id?: number
+  image?: string
+  ingredient?: any[]
+  title?: string
+}
 
 export interface Iced {
   description?: string
@@ -23,5 +29,11 @@ export interface Iced {
   title?: string
 }
 
-export type IcedListMatch = Partial<Iced>
+export interface IcedListMatch {
+  description?: string
+  id?: number
+  image?: string
+  ingredient?: any[]
+  title?: string
+}
 
