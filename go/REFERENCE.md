@@ -95,6 +95,7 @@ same parameters as `Direct()`.
 
 ```go
 hot := client.Hot(nil)
+fmt.Println(hot.GetName()) // "hot"
 ```
 
 ### Fields
@@ -115,6 +116,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Hot(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -145,6 +150,7 @@ Return the entity name.
 
 ```go
 iced := client.Iced(nil)
+fmt.Println(iced.GetName()) // "iced"
 ```
 
 ### Fields
@@ -165,6 +171,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Iced(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

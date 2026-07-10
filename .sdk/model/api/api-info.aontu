@@ -16,9 +16,9 @@ main: {
           url: "https://api.sampleapis.com"
         }
       ]
+      summary: "Basic list of descriptions and ingredients for popular coffee drinks"
       title: "Coffee"
       version: "1.0.0"
+      website: "https://sampleapis.com/api-list/coffee"
     }
   }
-}
-
