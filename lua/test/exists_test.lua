@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Coffee SDK exists test
 
 local sdk = require("coffee_sdk")
 
