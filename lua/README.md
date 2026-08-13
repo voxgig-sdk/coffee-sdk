@@ -219,9 +219,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local hot, err = client:Hot():load()
+    local hot, err = client:Hot():list()
     if err then error(err) end
-    -- hot is the loaded record
+    -- hot is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -235,7 +235,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: List.
@@ -249,7 +249,7 @@ API path: `/coffee/hot`
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: List.
@@ -278,7 +278,7 @@ Create an instance: `local hot = client:Hot(nil)`
 | `description` | `string` |  |
 | `id` | `number` |  |
 | `image` | `string` |  |
-| `ingredient` | `table` |  |
+| `ingredients` | `table` |  |
 | `title` | `string` |  |
 
 #### Example: List
@@ -305,7 +305,7 @@ Create an instance: `local iced = client:Iced(nil)`
 | `description` | `string` |  |
 | `id` | `number` |  |
 | `image` | `string` |  |
-| `ingredient` | `table` |  |
+| `ingredients` | `table` |  |
 | `title` | `string` |  |
 
 #### Example: List

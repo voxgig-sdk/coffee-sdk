@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = CoffeeSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = CoffeeSDK.test({
+  entity: {
+    hot: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const hots = await client.Hot().list()
-// hots is an array of bare Hot records populated with mock data
+// hots is an array of Hot entities, populated with mock data
+// — call hots[0].data() for the record itself
 console.log(hots)
 ```
 
@@ -110,7 +119,7 @@ import { CoffeeSDK } from '@voxgig-sdk/coffee'
 
 const client = new CoffeeSDK()
 
-// List all hots (returns Hot[])
+// List all hots (returns HotEntity[] — .data() for the record)
 const hots = await client.Hot().list()
 for (const hot of hots) {
   console.log(hot)
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://sampleapis.com](https://sampleapis.com)
 

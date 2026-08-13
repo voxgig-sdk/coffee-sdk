@@ -37,7 +37,7 @@ class HotEntity extends CoffeeEntityBase<Hot> {
 
 
 
-  async list(this: any, reqmatch?: HotListMatch, ctrl?: Control): Promise<Hot[]> {
+  async list(this: any, reqmatch?: HotListMatch, ctrl?: Control): Promise<HotEntity[]> {
 
     const utility = this._utility
 

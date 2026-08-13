@@ -131,7 +131,7 @@ const hot = client.Hot()
 | `description` | `string` | No |  |
 | `id` | `number` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `any[]` | No |  |
+| `ingredients` | `any[]` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations
@@ -185,7 +185,7 @@ const iced = client.Iced()
 | `description` | `string` | No |  |
 | `id` | `number` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `any[]` | No |  |
+| `ingredients` | `any[]` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations

@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = CoffeeSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $hot = $client->Hot()->list();
 print_r($hot);
 ```
@@ -225,7 +226,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -250,7 +251,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: List.
@@ -264,7 +265,7 @@ API path: `/coffee/hot`
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: List.
@@ -293,7 +294,7 @@ Create an instance: `$hot = $client->Hot();`
 | `description` | `string` |  |
 | `id` | `int` |  |
 | `image` | `string` |  |
-| `ingredient` | `array` |  |
+| `ingredients` | `array` |  |
 | `title` | `string` |  |
 
 #### Example: List
@@ -321,7 +322,7 @@ Create an instance: `$iced = $client->Iced();`
 | `description` | `string` |  |
 | `id` | `int` |  |
 | `image` | `string` |  |
-| `ingredient` | `array` |  |
+| `ingredients` | `array` |  |
 | `title` | `string` |  |
 
 #### Example: List

@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Coffee',
   }
 
 
@@ -80,7 +80,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "ingredient",
+          "name": "ingredients",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
@@ -102,6 +102,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/coffee/hot",
               "parts": [
@@ -148,7 +149,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "ingredient",
+          "name": "ingredients",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
@@ -170,6 +171,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/coffee/iced",
               "parts": [

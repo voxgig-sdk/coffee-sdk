@@ -63,7 +63,7 @@ describe('HotEntity', async () => {
     const hot_ref01_ent = client.Hot()
     const hot_ref01_match: any = {}
 
-    const hot_ref01_list = await hot_ref01_ent.list(hot_ref01_match)
+    const hot_ref01_list = (await hot_ref01_ent.list(hot_ref01_match)).map((e: any) => e.data())
 
 
   })

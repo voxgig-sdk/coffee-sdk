@@ -10,28 +10,28 @@
 ---@field description? string
 ---@field id? number
 ---@field image? string
----@field ingredient? table
+---@field ingredients? table
 ---@field title? string
 
 ---@class HotListMatch
 ---@field description? string
 ---@field id? number
 ---@field image? string
----@field ingredient? table
+---@field ingredients? table
 ---@field title? string
 
 ---@class Iced
 ---@field description? string
 ---@field id? number
 ---@field image? string
----@field ingredient? table
+---@field ingredients? table
 ---@field title? string
 
 ---@class IcedListMatch
 ---@field description? string
 ---@field id? number
 ---@field image? string
----@field ingredient? table
+---@field ingredients? table
 ---@field title? string
 
 local M = {}

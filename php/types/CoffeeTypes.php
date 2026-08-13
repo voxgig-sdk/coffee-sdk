@@ -18,7 +18,7 @@ class Hot
     public ?string $description = null;
     public ?int $id = null;
     public ?string $image = null;
-    public ?array $ingredient = null;
+    public ?array $ingredients = null;
     public ?string $title = null;
 }
 
@@ -28,7 +28,7 @@ class HotListMatch
     public ?string $description = null;
     public ?int $id = null;
     public ?string $image = null;
-    public ?array $ingredient = null;
+    public ?array $ingredients = null;
     public ?string $title = null;
 }
 
@@ -38,7 +38,7 @@ class Iced
     public ?string $description = null;
     public ?int $id = null;
     public ?string $image = null;
-    public ?array $ingredient = null;
+    public ?array $ingredients = null;
     public ?string $title = null;
 }
 
@@ -48,7 +48,7 @@ class IcedListMatch
     public ?string $description = null;
     public ?int $id = null;
     public ?string $image = null;
-    public ?array $ingredient = null;
+    public ?array $ingredients = null;
     public ?string $title = null;
 }
 

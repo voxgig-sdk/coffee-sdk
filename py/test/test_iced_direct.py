@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from coffee_sdk.utility.voxgig_struct import voxgig_struct as vs
 from coffee_sdk import CoffeeSDK
-from core import helpers
+from coffee_sdk.core import helpers
 from test import runner
 
 

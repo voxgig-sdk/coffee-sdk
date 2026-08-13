@@ -97,7 +97,7 @@ local hot = client:Hot(nil)
 | `description` | `string` | No |  |
 | `id` | `number` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `table` | No |  |
+| `ingredients` | `table` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations
@@ -153,7 +153,7 @@ local iced = client:Iced(nil)
 | `description` | `string` | No |  |
 | `id` | `number` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `table` | No |  |
+| `ingredients` | `table` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations

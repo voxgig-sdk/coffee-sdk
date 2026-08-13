@@ -63,7 +63,7 @@ describe('IcedEntity', async () => {
     const iced_ref01_ent = client.Iced()
     const iced_ref01_match: any = {}
 
-    const iced_ref01_list = await iced_ref01_ent.list(iced_ref01_match)
+    const iced_ref01_list = (await iced_ref01_ent.list(iced_ref01_match)).map((e: any) => e.data())
 
 
   })

@@ -35,7 +35,9 @@ const client = new CoffeeSDK()
 
 ### 2. List hot records
 
-`list()` resolves to an array of Hot objects — iterate it directly:
+`list()` resolves to an array of Hot ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const hots = await client.Hot().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = CoffeeSDK.test()
 
 const hot = await client.Hot().list()
-// hot is a bare entity populated with mock response data
+// hot is the entity, populated with mock response data
+// — call hot.data() for the record itself
 console.log(hot)
 ```
 
@@ -288,7 +291,7 @@ The `prepare()` method returns:
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: list.
@@ -302,7 +305,7 @@ API path: `/coffee/hot`
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: list.
@@ -331,7 +334,7 @@ Create an instance: `const hot = client.Hot()`
 | `description` | `string` |  |
 | `id` | `number` |  |
 | `image` | `string` |  |
-| `ingredient` | `any[]` |  |
+| `ingredients` | `any[]` |  |
 | `title` | `string` |  |
 
 #### Example: List
@@ -358,7 +361,7 @@ Create an instance: `const iced = client.Iced()`
 | `description` | `string` |  |
 | `id` | `number` |  |
 | `image` | `string` |  |
-| `ingredient` | `any[]` |  |
+| `ingredients` | `any[]` |  |
 | `title` | `string` |  |
 
 #### Example: List

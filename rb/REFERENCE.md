@@ -100,7 +100,7 @@ hot = client.Hot
 | `description` | `String` | No |  |
 | `id` | `Integer` | No |  |
 | `image` | `String` | No |  |
-| `ingredient` | `Array` | No |  |
+| `ingredients` | `Array` | No |  |
 | `title` | `String` | No |  |
 
 ### Operations
@@ -156,7 +156,7 @@ iced = client.Iced
 | `description` | `String` | No |  |
 | `id` | `Integer` | No |  |
 | `image` | `String` | No |  |
-| `ingredient` | `Array` | No |  |
+| `ingredients` | `Array` | No |  |
 | `title` | `String` | No |  |
 
 ### Operations

@@ -94,7 +94,7 @@ hot = client.Hot()
 | `description` | `str` | No |  |
 | `id` | `int` | No |  |
 | `image` | `str` | No |  |
-| `ingredient` | `list` | No |  |
+| `ingredients` | `list` | No |  |
 | `title` | `str` | No |  |
 
 ### Operations
@@ -151,7 +151,7 @@ iced = client.Iced()
 | `description` | `str` | No |  |
 | `id` | `int` | No |  |
 | `image` | `str` | No |  |
-| `ingredient` | `list` | No |  |
+| `ingredients` | `list` | No |  |
 | `title` | `str` | No |  |
 
 ### Operations

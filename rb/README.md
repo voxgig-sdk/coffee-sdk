@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = CoffeeSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 hot = client.Hot.list()
 puts hot
 ```
@@ -240,7 +241,7 @@ returns a result `Hash` with these keys:
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: List.
@@ -254,7 +255,7 @@ API path: `/coffee/hot`
 | `description` |  |
 | `id` |  |
 | `image` |  |
-| `ingredient` |  |
+| `ingredients` |  |
 | `title` |  |
 
 Operations: List.
@@ -283,7 +284,7 @@ Create an instance: `hot = client.Hot`
 | `description` | `String` |  |
 | `id` | `Integer` |  |
 | `image` | `String` |  |
-| `ingredient` | `Array` |  |
+| `ingredients` | `Array` |  |
 | `title` | `String` |  |
 
 #### Example: List
@@ -311,7 +312,7 @@ Create an instance: `iced = client.Iced`
 | `description` | `String` |  |
 | `id` | `Integer` |  |
 | `image` | `String` |  |
-| `ingredient` | `Array` |  |
+| `ingredients` | `Array` |  |
 | `title` | `String` |  |
 
 #### Example: List

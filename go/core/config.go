@@ -48,7 +48,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "ingredient",
+						"name": "ingredients",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 3,
@@ -70,6 +70,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/coffee/hot",
 								"parts": []any{
@@ -84,7 +85,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -116,7 +116,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "ingredient",
+						"name": "ingredients",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 3,
@@ -138,6 +138,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/coffee/iced",
 								"parts": []any{
@@ -152,7 +153,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

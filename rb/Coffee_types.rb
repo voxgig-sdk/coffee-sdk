@@ -19,7 +19,7 @@
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] ingredient
+# @!attribute [rw] ingredients
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -28,7 +28,7 @@ Hot = Struct.new(
   :description,
   :id,
   :image,
-  :ingredient,
+  :ingredients,
   :title,
   keyword_init: true
 )
@@ -44,7 +44,7 @@ Hot = Struct.new(
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] ingredient
+# @!attribute [rw] ingredients
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -53,7 +53,7 @@ HotListMatch = Struct.new(
   :description,
   :id,
   :image,
-  :ingredient,
+  :ingredients,
   :title,
   keyword_init: true
 )
@@ -69,7 +69,7 @@ HotListMatch = Struct.new(
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] ingredient
+# @!attribute [rw] ingredients
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -78,7 +78,7 @@ Iced = Struct.new(
   :description,
   :id,
   :image,
-  :ingredient,
+  :ingredients,
   :title,
   keyword_init: true
 )
@@ -94,7 +94,7 @@ Iced = Struct.new(
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] ingredient
+# @!attribute [rw] ingredients
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -103,7 +103,7 @@ IcedListMatch = Struct.new(
   :description,
   :id,
   :image,
-  :ingredient,
+  :ingredients,
   :title,
   keyword_init: true
 )

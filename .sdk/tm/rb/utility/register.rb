@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ CoffeeUtility.registrar = ->(u) {
   u.prepare_params = CoffeeUtilities::PrepareParams
   u.prepare_path = CoffeeUtilities::PreparePath
   u.prepare_query = CoffeeUtilities::PrepareQuery
+  u.graphql_body = CoffeeUtilities::GraphqlBody
+  u.graphql_errors = CoffeeUtilities::GraphqlErrors
   u.result_basic = CoffeeUtilities::ResultBasic
   u.result_body = CoffeeUtilities::ResultBody
   u.result_headers = CoffeeUtilities::ResultHeaders

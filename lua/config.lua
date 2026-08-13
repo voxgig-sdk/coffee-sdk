@@ -48,7 +48,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "ingredient",
+            ["name"] = "ingredients",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 3,
@@ -70,6 +70,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/coffee/hot",
                 ["parts"] = {
@@ -116,7 +117,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "ingredient",
+            ["name"] = "ingredients",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 3,
@@ -138,6 +139,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/coffee/iced",
                 ["parts"] = {

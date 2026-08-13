@@ -37,7 +37,7 @@ class IcedEntity extends CoffeeEntityBase<Iced> {
 
 
 
-  async list(this: any, reqmatch?: IcedListMatch, ctrl?: Control): Promise<Iced[]> {
+  async list(this: any, reqmatch?: IcedListMatch, ctrl?: Control): Promise<IcedEntity[]> {
 
     const utility = this._utility
 

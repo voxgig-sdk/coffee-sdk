@@ -105,7 +105,7 @@ fmt.Println(hot.GetName()) // "hot"
 | `description` | `string` | No |  |
 | `id` | `int` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `[]any` | No |  |
+| `ingredients` | `[]any` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations
@@ -160,7 +160,7 @@ fmt.Println(iced.GetName()) // "iced"
 | `description` | `string` | No |  |
 | `id` | `int` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `[]any` | No |  |
+| `ingredients` | `[]any` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations

@@ -54,7 +54,7 @@ class CoffeeConfig
             ],
             [
               'active' => true,
-              'name' => 'ingredient',
+              'name' => 'ingredients',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 3,
@@ -76,6 +76,7 @@ class CoffeeConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/coffee/hot',
                   'parts' => [
@@ -122,7 +123,7 @@ class CoffeeConfig
             ],
             [
               'active' => true,
-              'name' => 'ingredient',
+              'name' => 'ingredients',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 3,
@@ -144,6 +145,7 @@ class CoffeeConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/coffee/iced',
                   'parts' => [

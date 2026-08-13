@@ -264,7 +264,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"description"` |  |
 | `"id"` |  |
 | `"image"` |  |
-| `"ingredient"` |  |
+| `"ingredients"` |  |
 | `"title"` |  |
 
 Operations: List.
@@ -278,7 +278,7 @@ API path: `/coffee/hot`
 | `"description"` |  |
 | `"id"` |  |
 | `"image"` |  |
-| `"ingredient"` |  |
+| `"ingredients"` |  |
 | `"title"` |  |
 
 Operations: List.
@@ -307,7 +307,7 @@ Create an instance: `hot := client.Hot(nil)`
 | `description` | `string` |  |
 | `id` | `int` |  |
 | `image` | `string` |  |
-| `ingredient` | `[]any` |  |
+| `ingredients` | `[]any` |  |
 | `title` | `string` |  |
 
 #### Example: List
@@ -338,7 +338,7 @@ Create an instance: `iced := client.Iced(nil)`
 | `description` | `string` |  |
 | `id` | `int` |  |
 | `image` | `string` |  |
-| `ingredient` | `[]any` |  |
+| `ingredients` | `[]any` |  |
 | `title` | `string` |  |
 
 #### Example: List

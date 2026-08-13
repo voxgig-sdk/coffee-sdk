@@ -99,7 +99,7 @@ $hot = $client->Hot();
 | `description` | `string` | No |  |
 | `id` | `int` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `array` | No |  |
+| `ingredients` | `array` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations
@@ -155,7 +155,7 @@ $iced = $client->Iced();
 | `description` | `string` | No |  |
 | `id` | `int` | No |  |
 | `image` | `string` | No |  |
-| `ingredient` | `array` | No |  |
+| `ingredients` | `array` | No |  |
 | `title` | `string` | No |  |
 
 ### Operations

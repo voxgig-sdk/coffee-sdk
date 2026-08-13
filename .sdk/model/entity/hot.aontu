@@ -21,7 +21,7 @@ main: kit: entity: hot: {
       type: "`$STRING`"
     }
     {
-      name: "ingredient"
+      name: "ingredients"
       req: false
       type: "`$ARRAY`"
     }
