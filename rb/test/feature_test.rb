@@ -15,7 +15,7 @@ require_relative "../Coffee_sdk"
 module CoffeeFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = CoffeeConfig.make_config["feature"]
+    f = CoffeeConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
