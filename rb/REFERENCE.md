@@ -97,11 +97,11 @@ hot = client.Hot
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | No |  |
-| `id` | `Integer` | No |  |
-| `image` | `String` | No |  |
-| `ingredients` | `Array` | No |  |
-| `title` | `String` | No |  |
+| `description` | `String` | No | Description of the coffee drink |
+| `id` | `Integer` | No | Unique identifier for the coffee drink |
+| `image` | `String` | No | URL to an image of the coffee drink |
+| `ingredients` | `Array` | No | List of ingredients used in the coffee drink |
+| `title` | `String` | No | Name of the coffee drink |
 
 ### Operations
 
@@ -153,11 +153,11 @@ iced = client.Iced
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | No |  |
-| `id` | `Integer` | No |  |
-| `image` | `String` | No |  |
-| `ingredients` | `Array` | No |  |
-| `title` | `String` | No |  |
+| `description` | `String` | No | Description of the coffee drink |
+| `id` | `Integer` | No | Unique identifier for the coffee drink |
+| `image` | `String` | No | URL to an image of the coffee drink |
+| `ingredients` | `Array` | No | List of ingredients used in the coffee drink |
+| `title` | `String` | No | Name of the coffee drink |
 
 ### Operations
 

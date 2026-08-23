@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Coffee',
+        slug: "coffee",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -59,22 +70,27 @@ class Config {
       "fields": [
         {
           "name": "description",
+          "short": "Description of the coffee drink",
           "type": "`$STRING`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the coffee drink",
           "type": "`$INTEGER`"
         },
         {
           "name": "image",
+          "short": "URL to an image of the coffee drink",
           "type": "`$STRING`"
         },
         {
           "name": "ingredients",
+          "short": "List of ingredients used in the coffee drink",
           "type": "`$ARRAY`"
         },
         {
           "name": "title",
+          "short": "Name of the coffee drink",
           "type": "`$STRING`"
         }
       ],
@@ -110,22 +126,27 @@ class Config {
       "fields": [
         {
           "name": "description",
+          "short": "Description of the coffee drink",
           "type": "`$STRING`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the coffee drink",
           "type": "`$INTEGER`"
         },
         {
           "name": "image",
+          "short": "URL to an image of the coffee drink",
           "type": "`$STRING`"
         },
         {
           "name": "ingredients",
+          "short": "List of ingredients used in the coffee drink",
           "type": "`$ARRAY`"
         },
         {
           "name": "title",
+          "short": "Name of the coffee drink",
           "type": "`$STRING`"
         }
       ],

@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -288,11 +288,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: list.
 
@@ -302,11 +302,11 @@ API path: `/coffee/hot`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: list.
 
@@ -331,11 +331,11 @@ Create an instance: `const hot = client.Hot()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `number` |  |
-| `image` | `string` |  |
-| `ingredients` | `any[]` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `number` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `any[]` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 
@@ -358,11 +358,11 @@ Create an instance: `const iced = client.Iced()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `number` |  |
-| `image` | `string` |  |
-| `ingredients` | `any[]` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `number` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `any[]` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 

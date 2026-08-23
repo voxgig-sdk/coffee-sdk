@@ -91,11 +91,11 @@ hot = client.Hot()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `str` | No |  |
-| `id` | `int` | No |  |
-| `image` | `str` | No |  |
-| `ingredients` | `list` | No |  |
-| `title` | `str` | No |  |
+| `description` | `str` | No | Description of the coffee drink |
+| `id` | `int` | No | Unique identifier for the coffee drink |
+| `image` | `str` | No | URL to an image of the coffee drink |
+| `ingredients` | `list` | No | List of ingredients used in the coffee drink |
+| `title` | `str` | No | Name of the coffee drink |
 
 ### Operations
 
@@ -148,11 +148,11 @@ iced = client.Iced()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `str` | No |  |
-| `id` | `int` | No |  |
-| `image` | `str` | No |  |
-| `ingredients` | `list` | No |  |
-| `title` | `str` | No |  |
+| `description` | `str` | No | Description of the coffee drink |
+| `id` | `int` | No | Unique identifier for the coffee drink |
+| `image` | `str` | No | URL to an image of the coffee drink |
+| `ingredients` | `list` | No | List of ingredients used in the coffee drink |
+| `title` | `str` | No | Name of the coffee drink |
 
 ### Operations
 

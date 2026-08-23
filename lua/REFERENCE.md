@@ -94,11 +94,11 @@ local hot = client:Hot(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `number` | No |  |
-| `image` | `string` | No |  |
-| `ingredients` | `table` | No |  |
-| `title` | `string` | No |  |
+| `description` | `string` | No | Description of the coffee drink |
+| `id` | `number` | No | Unique identifier for the coffee drink |
+| `image` | `string` | No | URL to an image of the coffee drink |
+| `ingredients` | `table` | No | List of ingredients used in the coffee drink |
+| `title` | `string` | No | Name of the coffee drink |
 
 ### Operations
 
@@ -150,11 +150,11 @@ local iced = client:Iced(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `number` | No |  |
-| `image` | `string` | No |  |
-| `ingredients` | `table` | No |  |
-| `title` | `string` | No |  |
+| `description` | `string` | No | Description of the coffee drink |
+| `id` | `number` | No | Unique identifier for the coffee drink |
+| `image` | `string` | No | URL to an image of the coffee drink |
+| `ingredients` | `table` | No | List of ingredients used in the coffee drink |
+| `title` | `string` | No | Name of the coffee drink |
 
 ### Operations
 

@@ -6,7 +6,7 @@ The Golang SDK for the Coffee API — an entity-oriented client using standard G
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Hot(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -261,11 +261,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"id"` |  |
-| `"image"` |  |
-| `"ingredients"` |  |
-| `"title"` |  |
+| `"description"` | Description of the coffee drink |
+| `"id"` | Unique identifier for the coffee drink |
+| `"image"` | URL to an image of the coffee drink |
+| `"ingredients"` | List of ingredients used in the coffee drink |
+| `"title"` | Name of the coffee drink |
 
 Operations: List.
 
@@ -275,11 +275,11 @@ API path: `/coffee/hot`
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"id"` |  |
-| `"image"` |  |
-| `"ingredients"` |  |
-| `"title"` |  |
+| `"description"` | Description of the coffee drink |
+| `"id"` | Unique identifier for the coffee drink |
+| `"image"` | URL to an image of the coffee drink |
+| `"ingredients"` | List of ingredients used in the coffee drink |
+| `"title"` | Name of the coffee drink |
 
 Operations: List.
 
@@ -304,11 +304,11 @@ Create an instance: `hot := client.Hot(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `int` |  |
-| `image` | `string` |  |
-| `ingredients` | `[]any` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `int` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `[]any` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 
@@ -335,11 +335,11 @@ Create an instance: `iced := client.Iced(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `int` |  |
-| `image` | `string` |  |
-| `ingredients` | `[]any` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `int` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `[]any` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 

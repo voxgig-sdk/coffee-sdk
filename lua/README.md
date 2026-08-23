@@ -232,11 +232,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: List.
 
@@ -246,11 +246,11 @@ API path: `/coffee/hot`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: List.
 
@@ -275,11 +275,11 @@ Create an instance: `local hot = client:Hot(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `number` |  |
-| `image` | `string` |  |
-| `ingredients` | `table` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `number` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `table` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 
@@ -302,11 +302,11 @@ Create an instance: `local iced = client:Iced(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `number` |  |
-| `image` | `string` |  |
-| `ingredients` | `table` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `number` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `table` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 

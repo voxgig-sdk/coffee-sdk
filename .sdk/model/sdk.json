@@ -36,30 +36,35 @@
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Description of the coffee drink",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the coffee drink",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "image",
               "req": false,
+              "short": "URL to an image of the coffee drink",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "ingredients",
               "req": false,
+              "short": "List of ingredients used in the coffee drink",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Name of the coffee drink",
               "type": "`$STRING`"
             }
           ],
@@ -106,30 +111,35 @@
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Description of the coffee drink",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the coffee drink",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "image",
               "req": false,
+              "short": "URL to an image of the coffee drink",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "ingredients",
               "req": false,
+              "short": "List of ingredients used in the coffee drink",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Name of the coffee drink",
               "type": "`$STRING`"
             }
           ],

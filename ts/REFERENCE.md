@@ -128,11 +128,11 @@ const hot = client.Hot()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `number` | No |  |
-| `image` | `string` | No |  |
-| `ingredients` | `any[]` | No |  |
-| `title` | `string` | No |  |
+| `description` | `string` | No | Description of the coffee drink |
+| `id` | `number` | No | Unique identifier for the coffee drink |
+| `image` | `string` | No | URL to an image of the coffee drink |
+| `ingredients` | `any[]` | No | List of ingredients used in the coffee drink |
+| `title` | `string` | No | Name of the coffee drink |
 
 ### Operations
 
@@ -182,11 +182,11 @@ const iced = client.Iced()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `number` | No |  |
-| `image` | `string` | No |  |
-| `ingredients` | `any[]` | No |  |
-| `title` | `string` | No |  |
+| `description` | `string` | No | Description of the coffee drink |
+| `id` | `number` | No | Unique identifier for the coffee drink |
+| `image` | `string` | No | URL to an image of the coffee drink |
+| `ingredients` | `any[]` | No | List of ingredients used in the coffee drink |
+| `title` | `string` | No | Name of the coffee drink |
 
 ### Operations
 

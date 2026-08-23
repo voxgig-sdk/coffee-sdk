@@ -19,6 +19,9 @@ module CoffeeConfig
     {
       "main" => {
         "name" => "Coffee",
+        "slug" => "coffee",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -42,22 +45,27 @@ module CoffeeConfig
           "fields" => [
             {
               "name" => "description",
+              "short" => "Description of the coffee drink",
               "type" => "`$STRING`",
             },
             {
               "name" => "id",
+              "short" => "Unique identifier for the coffee drink",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "image",
+              "short" => "URL to an image of the coffee drink",
               "type" => "`$STRING`",
             },
             {
               "name" => "ingredients",
+              "short" => "List of ingredients used in the coffee drink",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "title",
+              "short" => "Name of the coffee drink",
               "type" => "`$STRING`",
             },
           ],
@@ -93,22 +101,27 @@ module CoffeeConfig
           "fields" => [
             {
               "name" => "description",
+              "short" => "Description of the coffee drink",
               "type" => "`$STRING`",
             },
             {
               "name" => "id",
+              "short" => "Unique identifier for the coffee drink",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "image",
+              "short" => "URL to an image of the coffee drink",
               "type" => "`$STRING`",
             },
             {
               "name" => "ingredients",
+              "short" => "List of ingredients used in the coffee drink",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "title",
+              "short" => "Name of the coffee drink",
               "type" => "`$STRING`",
             },
           ],

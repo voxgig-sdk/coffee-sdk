@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Coffee",
+			"slug": "coffee",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,22 +37,27 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
+						"short": "Description of the coffee drink",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the coffee drink",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "image",
+						"short": "URL to an image of the coffee drink",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ingredients",
+						"short": "List of ingredients used in the coffee drink",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Name of the coffee drink",
 						"type": "`$STRING`",
 					},
 				},
@@ -85,22 +93,27 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
+						"short": "Description of the coffee drink",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the coffee drink",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "image",
+						"short": "URL to an image of the coffee drink",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ingredients",
+						"short": "List of ingredients used in the coffee drink",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Name of the coffee drink",
 						"type": "`$STRING`",
 					},
 				},

@@ -244,11 +244,11 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: List.
 
@@ -258,11 +258,11 @@ API path: `/coffee/hot`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: List.
 
@@ -287,11 +287,11 @@ Create an instance: `hot = client.Hot()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `id` | `int` |  |
-| `image` | `str` |  |
-| `ingredients` | `list` |  |
-| `title` | `str` |  |
+| `description` | `str` | Description of the coffee drink |
+| `id` | `int` | Unique identifier for the coffee drink |
+| `image` | `str` | URL to an image of the coffee drink |
+| `ingredients` | `list` | List of ingredients used in the coffee drink |
+| `title` | `str` | Name of the coffee drink |
 
 #### Example: List
 
@@ -314,11 +314,11 @@ Create an instance: `iced = client.Iced()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `id` | `int` |  |
-| `image` | `str` |  |
-| `ingredients` | `list` |  |
-| `title` | `str` |  |
+| `description` | `str` | Description of the coffee drink |
+| `id` | `int` | Unique identifier for the coffee drink |
+| `image` | `str` | URL to an image of the coffee drink |
+| `ingredients` | `list` | List of ingredients used in the coffee drink |
+| `title` | `str` | Name of the coffee drink |
 
 #### Example: List
 

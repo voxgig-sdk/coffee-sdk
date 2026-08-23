@@ -248,11 +248,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: List.
 
@@ -262,11 +262,11 @@ API path: `/coffee/hot`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image` |  |
-| `ingredients` |  |
-| `title` |  |
+| `description` | Description of the coffee drink |
+| `id` | Unique identifier for the coffee drink |
+| `image` | URL to an image of the coffee drink |
+| `ingredients` | List of ingredients used in the coffee drink |
+| `title` | Name of the coffee drink |
 
 Operations: List.
 
@@ -291,11 +291,11 @@ Create an instance: `$hot = $client->Hot();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `int` |  |
-| `image` | `string` |  |
-| `ingredients` | `array` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `int` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `array` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 
@@ -319,11 +319,11 @@ Create an instance: `$iced = $client->Iced();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `int` |  |
-| `image` | `string` |  |
-| `ingredients` | `array` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description of the coffee drink |
+| `id` | `int` | Unique identifier for the coffee drink |
+| `image` | `string` | URL to an image of the coffee drink |
+| `ingredients` | `array` | List of ingredients used in the coffee drink |
+| `title` | `string` | Name of the coffee drink |
 
 #### Example: List
 

@@ -102,11 +102,11 @@ fmt.Println(hot.GetName()) // "hot"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `int` | No |  |
-| `image` | `string` | No |  |
-| `ingredients` | `[]any` | No |  |
-| `title` | `string` | No |  |
+| `description` | `string` | No | Description of the coffee drink |
+| `id` | `int` | No | Unique identifier for the coffee drink |
+| `image` | `string` | No | URL to an image of the coffee drink |
+| `ingredients` | `[]any` | No | List of ingredients used in the coffee drink |
+| `title` | `string` | No | Name of the coffee drink |
 
 ### Operations
 
@@ -157,11 +157,11 @@ fmt.Println(iced.GetName()) // "iced"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `int` | No |  |
-| `image` | `string` | No |  |
-| `ingredients` | `[]any` | No |  |
-| `title` | `string` | No |  |
+| `description` | `string` | No | Description of the coffee drink |
+| `id` | `int` | No | Unique identifier for the coffee drink |
+| `image` | `string` | No | URL to an image of the coffee drink |
+| `ingredients` | `[]any` | No | List of ingredients used in the coffee drink |
+| `title` | `string` | No | Name of the coffee drink |
 
 ### Operations
 
