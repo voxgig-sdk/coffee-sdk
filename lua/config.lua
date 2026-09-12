@@ -58,6 +58,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "hot",
         ["op"] = {
           ["list"] = {
@@ -69,14 +73,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/coffee/hot",
-                ["parts"] = {
-                  "coffee",
-                  "hot",
+                ["segments"] = {
+                  {
+                    ["lit"] = "coffee",
+                  },
+                  {
+                    ["lit"] = "hot",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "coffee",
+                  "hot",
                 },
               },
             },
@@ -114,6 +126,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "iced",
         ["op"] = {
           ["list"] = {
@@ -125,14 +141,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/coffee/iced",
-                ["parts"] = {
-                  "coffee",
-                  "iced",
+                ["segments"] = {
+                  {
+                    ["lit"] = "coffee",
+                  },
+                  {
+                    ["lit"] = "iced",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "coffee",
+                  "iced",
                 },
               },
             },

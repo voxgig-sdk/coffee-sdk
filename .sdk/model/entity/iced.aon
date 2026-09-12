@@ -50,9 +50,13 @@ main: kit: entity: iced: {
         {
           method: "GET"
           orig: "/coffee/iced"
-          parts: [
-            "coffee"
-            "iced"
+          segments: [
+            {
+              lit: "coffee"
+            }
+            {
+              lit: "iced"
+            }
           ]
           transform: {
             req: "`reqdata`"

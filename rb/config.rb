@@ -70,6 +70,10 @@ module CoffeeConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "hot",
           "op" => {
             "list" => {
@@ -81,15 +85,23 @@ module CoffeeConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/coffee/hot",
-                  "parts" => [
-                    "coffee",
-                    "hot",
+                  "segments" => [
+                    {
+                      "lit" => "coffee",
+                    },
+                    {
+                      "lit" => "hot",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "coffee",
+                    "hot",
+                  ],
                 },
               ],
             },
@@ -126,6 +138,10 @@ module CoffeeConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "iced",
           "op" => {
             "list" => {
@@ -137,15 +153,23 @@ module CoffeeConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/coffee/iced",
-                  "parts" => [
-                    "coffee",
-                    "iced",
+                  "segments" => [
+                    {
+                      "lit" => "coffee",
+                    },
+                    {
+                      "lit" => "iced",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "coffee",
+                    "iced",
+                  ],
                 },
               ],
             },

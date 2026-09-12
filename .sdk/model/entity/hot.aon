@@ -50,9 +50,13 @@ main: kit: entity: hot: {
         {
           method: "GET"
           orig: "/coffee/hot"
-          parts: [
-            "coffee"
-            "hot"
+          segments: [
+            {
+              lit: "coffee"
+            }
+            {
+              lit: "hot"
+            }
           ]
           transform: {
             req: "`reqdata`"
