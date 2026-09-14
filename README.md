@@ -105,7 +105,7 @@ local results, err = client:Hot():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/coffee` | publish pending — [install from git tag](https://github.com/voxgig-sdk/coffee-sdk/releases) |
+| TypeScript | `@voxgig-sdk/coffee-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/coffee-sdk/releases) |
 | Python | `voxgig-sdk-coffee` | publish pending — [install from git tag](https://github.com/voxgig-sdk/coffee-sdk/releases) |
 | PHP | `voxgig-sdk/coffee` | publish pending — [install from git tag](https://github.com/voxgig-sdk/coffee-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/coffee-sdk/go` | `go get github.com/voxgig-sdk/coffee-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Hot():list()
 ### TypeScript
 
 ```ts
-import { CoffeeSDK } from '@voxgig-sdk/coffee'
+import { CoffeeSDK } from '@voxgig-sdk/coffee-sdk'
 
 const client = new CoffeeSDK()
 
