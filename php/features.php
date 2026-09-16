@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Coffee SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class CoffeeFeatures
@@ -14,8 +17,14 @@ class CoffeeFeatures
         switch ($name) {
             case "base":
                 return new CoffeeBaseFeature();
+            case "ratelimit":
+                return new CoffeeRatelimitFeature();
+            case "retry":
+                return new CoffeeRetryFeature();
             case "test":
                 return new CoffeeTestFeature();
+            case "timeout":
+                return new CoffeeTimeoutFeature();
             default:
                 return new CoffeeBaseFeature();
         }
@@ -31,7 +40,10 @@ class CoffeeFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

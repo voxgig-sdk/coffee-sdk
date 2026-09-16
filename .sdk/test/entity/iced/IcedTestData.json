@@ -33,5 +33,81 @@
         "title": "scc"
       }
     }
+  },
+  "requests": {
+    "GET /coffee/iced": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getIcedCoffee",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "description": {
+                        "description": "Description of the coffee drink",
+                        "example": "A strong, concentrated coffee brewed by forcing hot water through finely-ground coffee beans",
+                        "type": "string"
+                      },
+                      "id": {
+                        "description": "Unique identifier for the coffee drink",
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "image": {
+                        "description": "URL to an image of the coffee drink",
+                        "example": "https://example.com/espresso.jpg",
+                        "type": "string"
+                      },
+                      "ingredients": {
+                        "description": "List of ingredients used in the coffee drink",
+                        "example": [
+                          "Coffee beans",
+                          "Water"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "title": {
+                        "description": "Name of the coffee drink",
+                        "example": "Espresso",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Internal server error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }
