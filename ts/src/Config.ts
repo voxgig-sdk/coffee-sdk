@@ -127,12 +127,12 @@ class Config {
 
     entity: {
       
-      hot: {
-      },
-
-      iced: {
-      },
-
+        hot: {
+        },
+  
+        iced: {
+        },
+  
     }
   }
 

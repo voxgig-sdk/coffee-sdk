@@ -1,4 +1,4 @@
 # Flows
 
-@"BasicHotFlow.aon"
-@"BasicIcedFlow.aon"
+@"./BasicHotFlow.aon"
+@"./BasicIcedFlow.aon"
