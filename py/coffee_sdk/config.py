@@ -117,28 +117,33 @@ def make_config():
         "fields": [
           {
             "name": "description",
-            "short": "Description of the coffee drink",
+            "title": "Description",
             "type": "`$STRING`",
+            "short": "Description of the coffee drink",
           },
           {
             "name": "id",
-            "short": "Unique identifier for the coffee drink",
+            "title": "Id",
             "type": "`$INTEGER`",
+            "short": "Unique identifier for the coffee drink",
           },
           {
             "name": "image",
-            "short": "URL to an image of the coffee drink",
+            "title": "Image",
             "type": "`$STRING`",
+            "short": "URL to an image of the coffee drink",
           },
           {
             "name": "ingredients",
-            "short": "List of ingredients used in the coffee drink",
+            "title": "Ingredients",
             "type": "`$ARRAY`",
+            "short": "List of ingredients used in the coffee drink",
           },
           {
             "name": "title",
-            "short": "Name of the coffee drink",
+            "title": "Title",
             "type": "`$STRING`",
+            "short": "Name of the coffee drink",
           },
         ],
         "id": {
@@ -152,7 +157,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/coffee/hot",
@@ -164,15 +168,17 @@ def make_config():
                     "lit": "hot",
                   },
                 ],
-                "select": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "coffee",
                   "hot",
                 ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {},
+                "select": {},
               },
             ],
           },
@@ -185,28 +191,33 @@ def make_config():
         "fields": [
           {
             "name": "description",
-            "short": "Description of the coffee drink",
+            "title": "Description",
             "type": "`$STRING`",
+            "short": "Description of the coffee drink",
           },
           {
             "name": "id",
-            "short": "Unique identifier for the coffee drink",
+            "title": "Id",
             "type": "`$INTEGER`",
+            "short": "Unique identifier for the coffee drink",
           },
           {
             "name": "image",
-            "short": "URL to an image of the coffee drink",
+            "title": "Image",
             "type": "`$STRING`",
+            "short": "URL to an image of the coffee drink",
           },
           {
             "name": "ingredients",
-            "short": "List of ingredients used in the coffee drink",
+            "title": "Ingredients",
             "type": "`$ARRAY`",
+            "short": "List of ingredients used in the coffee drink",
           },
           {
             "name": "title",
-            "short": "Name of the coffee drink",
+            "title": "Title",
             "type": "`$STRING`",
+            "short": "Name of the coffee drink",
           },
         ],
         "id": {
@@ -220,7 +231,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/coffee/iced",
@@ -232,15 +242,17 @@ def make_config():
                     "lit": "iced",
                   },
                 ],
-                "select": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "coffee",
                   "iced",
                 ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {},
+                "select": {},
               },
             ],
           },

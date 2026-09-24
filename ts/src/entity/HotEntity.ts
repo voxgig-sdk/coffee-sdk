@@ -19,7 +19,6 @@ import type {
   HotListMatch,
 } from '../CoffeeTypes'
 
-// TODO: needs Entity superclass
 class HotEntity extends CoffeeEntityBase<Hot> {
 
   constructor(client: CoffeeSDK, entopts: any) {

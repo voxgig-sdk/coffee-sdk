@@ -1,0 +1,82 @@
+# Entity: iced
+
+main: kit: entity: iced: {
+
+  alias: field: {}
+
+  fields: {
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Description of the coffee drink"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the coffee drink"
+      t: "`$INTEGER`"
+    }
+    image: {
+      h: "Image"
+      n: "image"
+      r: false
+      sh: "URL to an image of the coffee drink"
+      t: "`$STRING`"
+    }
+    ingredients: {
+      h: "Ingredients"
+      n: "ingredients"
+      r: false
+      sh: "List of ingredients used in the coffee drink"
+      t: "`$ARRAY`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Name of the coffee drink"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "iced"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /coffee/iced"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/coffee/iced"
+          s: [
+            {
+              lit: "coffee"
+            }
+            {
+              lit: "iced"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

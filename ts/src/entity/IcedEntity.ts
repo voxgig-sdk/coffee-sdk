@@ -19,7 +19,6 @@ import type {
   IcedListMatch,
 } from '../CoffeeTypes'
 
-// TODO: needs Entity superclass
 class IcedEntity extends CoffeeEntityBase<Iced> {
 
   constructor(client: CoffeeSDK, entopts: any) {

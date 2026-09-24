@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -142,28 +135,33 @@ class Config {
       "fields": [
         {
           "name": "description",
-          "short": "Description of the coffee drink",
-          "type": "`$STRING`"
+          "title": "Description",
+          "type": "`$STRING`",
+          "short": "Description of the coffee drink"
         },
         {
           "name": "id",
-          "short": "Unique identifier for the coffee drink",
-          "type": "`$INTEGER`"
+          "title": "Id",
+          "type": "`$INTEGER`",
+          "short": "Unique identifier for the coffee drink"
         },
         {
           "name": "image",
-          "short": "URL to an image of the coffee drink",
-          "type": "`$STRING`"
+          "title": "Image",
+          "type": "`$STRING`",
+          "short": "URL to an image of the coffee drink"
         },
         {
           "name": "ingredients",
-          "short": "List of ingredients used in the coffee drink",
-          "type": "`$ARRAY`"
+          "title": "Ingredients",
+          "type": "`$ARRAY`",
+          "short": "List of ingredients used in the coffee drink"
         },
         {
           "name": "title",
-          "short": "Name of the coffee drink",
-          "type": "`$STRING`"
+          "title": "Title",
+          "type": "`$STRING`",
+          "short": "Name of the coffee drink"
         }
       ],
       "id": {
@@ -177,7 +175,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/coffee/hot",
@@ -189,15 +186,17 @@ class Config {
                   "lit": "hot"
                 }
               ],
-              "select": {},
+              "parts": [
+                "coffee",
+                "hot"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "coffee",
-                "hot"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -210,28 +209,33 @@ class Config {
       "fields": [
         {
           "name": "description",
-          "short": "Description of the coffee drink",
-          "type": "`$STRING`"
+          "title": "Description",
+          "type": "`$STRING`",
+          "short": "Description of the coffee drink"
         },
         {
           "name": "id",
-          "short": "Unique identifier for the coffee drink",
-          "type": "`$INTEGER`"
+          "title": "Id",
+          "type": "`$INTEGER`",
+          "short": "Unique identifier for the coffee drink"
         },
         {
           "name": "image",
-          "short": "URL to an image of the coffee drink",
-          "type": "`$STRING`"
+          "title": "Image",
+          "type": "`$STRING`",
+          "short": "URL to an image of the coffee drink"
         },
         {
           "name": "ingredients",
-          "short": "List of ingredients used in the coffee drink",
-          "type": "`$ARRAY`"
+          "title": "Ingredients",
+          "type": "`$ARRAY`",
+          "short": "List of ingredients used in the coffee drink"
         },
         {
           "name": "title",
-          "short": "Name of the coffee drink",
-          "type": "`$STRING`"
+          "title": "Title",
+          "type": "`$STRING`",
+          "short": "Name of the coffee drink"
         }
       ],
       "id": {
@@ -245,7 +249,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/coffee/iced",
@@ -257,15 +260,17 @@ class Config {
                   "lit": "iced"
                 }
               ],
-              "select": {},
+              "parts": [
+                "coffee",
+                "iced"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "coffee",
-                "iced"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }

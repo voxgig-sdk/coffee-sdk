@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HotEntity = void 0;
 const CoffeeEntityBase_1 = require("../CoffeeEntityBase");
-// TODO: needs Entity superclass
 class HotEntity extends CoffeeEntityBase_1.CoffeeEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

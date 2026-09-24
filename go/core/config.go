@@ -92,28 +92,33 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
-						"short": "Description of the coffee drink",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Description of the coffee drink",
 					},
 					map[string]any{
 						"name": "id",
-						"short": "Unique identifier for the coffee drink",
+						"title": "Id",
 						"type": "`$INTEGER`",
+						"short": "Unique identifier for the coffee drink",
 					},
 					map[string]any{
 						"name": "image",
-						"short": "URL to an image of the coffee drink",
+						"title": "Image",
 						"type": "`$STRING`",
+						"short": "URL to an image of the coffee drink",
 					},
 					map[string]any{
 						"name": "ingredients",
-						"short": "List of ingredients used in the coffee drink",
+						"title": "Ingredients",
 						"type": "`$ARRAY`",
+						"short": "List of ingredients used in the coffee drink",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Name of the coffee drink",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Name of the coffee drink",
 					},
 				},
 				"id": map[string]any{
@@ -127,7 +132,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/coffee/hot",
@@ -139,15 +143,17 @@ func MakeConfig() map[string]any {
 										"lit": "hot",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"coffee",
 									"hot",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -160,28 +166,33 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
-						"short": "Description of the coffee drink",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Description of the coffee drink",
 					},
 					map[string]any{
 						"name": "id",
-						"short": "Unique identifier for the coffee drink",
+						"title": "Id",
 						"type": "`$INTEGER`",
+						"short": "Unique identifier for the coffee drink",
 					},
 					map[string]any{
 						"name": "image",
-						"short": "URL to an image of the coffee drink",
+						"title": "Image",
 						"type": "`$STRING`",
+						"short": "URL to an image of the coffee drink",
 					},
 					map[string]any{
 						"name": "ingredients",
-						"short": "List of ingredients used in the coffee drink",
+						"title": "Ingredients",
 						"type": "`$ARRAY`",
+						"short": "List of ingredients used in the coffee drink",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Name of the coffee drink",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Name of the coffee drink",
 					},
 				},
 				"id": map[string]any{
@@ -195,7 +206,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/coffee/iced",
@@ -207,15 +217,17 @@ func MakeConfig() map[string]any {
 										"lit": "iced",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"coffee",
 									"iced",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
